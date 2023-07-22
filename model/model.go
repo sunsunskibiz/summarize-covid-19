@@ -19,3 +19,7 @@ type CovidSummary struct {
 	Province map[string]int `json:"Province"`
 	AgeGroup map[string]int `json:"AgeGroup"`
 }
+
+type CovidResponse struct {
+	Data []Covid `json:"Data"`
+}
