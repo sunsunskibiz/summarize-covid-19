@@ -2,12 +2,12 @@ package handler
 
 import (
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
 	"github.com/sunsunskibiz/summarize-covid-19/model"
+	"github.com/sunsunskibiz/summarize-covid-19/service"
 )
 
 func CovidSummary(c *gin.Context) {
@@ -19,13 +19,7 @@ func CovidSummary(c *gin.Context) {
 		return
 	}
 
-	fmt.Printf("%+v\n", covids[0])
-
-	// TODO: Logic Summary
-
-	// c.JSON(http.StatusOK, gin.H{
-	// 	"message": "pong",
-	// })
+	c.JSON(http.StatusOK, service.CovidSummary(covids))
 }
 
 func getCovids() ([]model.Covid, error) {

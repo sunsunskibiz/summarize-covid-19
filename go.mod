@@ -4,6 +4,7 @@ go 1.20
 
 require (
 	github.com/gin-gonic/gin v1.9.1
+	github.com/openlyinc/pointy v1.2.0
 	github.com/stretchr/testify v1.8.3
 )
 

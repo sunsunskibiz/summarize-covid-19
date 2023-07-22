@@ -28,8 +28,8 @@ func TestUnMarshalCovid(t *testing.T) {
 	err := json.Unmarshal(covidJson, &covid)
 
 	assert.Nil(t, err)
-	assert.Equal(t, 24, covid.Age)
-	assert.Equal(t, "India", covid.NationEn)
+	assert.Equal(t, 24, *covid.Age)
+	assert.Equal(t, "India", *covid.NationEn)
 }
 
 func TestMarsholCovidSummary(t *testing.T) {
