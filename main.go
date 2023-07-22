@@ -1,19 +1,19 @@
 package main
 
 import (
-	"net/http"
-
 	"github.com/gin-gonic/gin"
+	"github.com/sunsunskibiz/summarize-covid-19/handler"
 )
 
-func main() { 
+func main() {
+	r := setupRouter()
+	r.Run()
+}
+
+func setupRouter() *gin.Engine {
 	r := gin.Default()
 
-	r.GET("/ping", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{
-			"message": "pong",
-		})
-	})
-	
-	r.Run()
+	r.GET("/covid/summary", handler.CovidSummary)
+
+	return r
 }
